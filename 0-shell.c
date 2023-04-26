@@ -1,12 +1,11 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - function main
- * Return: nothing
+ * betty - function main
+ * Return: zero
  */
 
-int main()
+void betty()
 {
 	printf("anything should check\n");
 	return(0);
