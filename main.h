@@ -7,6 +7,6 @@
 #include <unistd.h>
 
 
-void betty();
+void betty(void);
 
 #endif
