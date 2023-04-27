@@ -36,7 +36,7 @@ void check_dif(char **arguments, functi_comm_global *data, char *buff)
 		return;
 	}
 
-	if (folder_current(cmd, arguments, buff, data) == _TRUE)
+	if (fol_cur(cmd, arguments, buff, data) == _TRUE)
 		return;
 
 	data->value_path = which(cmd, data);
