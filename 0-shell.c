@@ -5,7 +5,7 @@
  * Return: zero
  */
 
-void betty(void)
+void main(void)
 {
 	printf("anything should check\n");
 	return (0);
