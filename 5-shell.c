@@ -3,7 +3,7 @@
 /**
  * fun - fun a command in other process
  *
- * @command: Command to fun 
+ * @command: Command to fun
  * @arguments: Arguments line
  * @data: info about shell
  * @buff: Line readed
@@ -11,7 +11,7 @@
  **/
 void fun(char *command, char **arguments, functi_comm_global *data, char *buff)
 {
-	int status; 
+	int status;
 	pid_t pid;
 
 	pid = fork();
