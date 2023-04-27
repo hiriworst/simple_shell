@@ -32,7 +32,7 @@ void check_dif(char **arguments, functi_comm_global *data, char *buff)
 
 	if (status == 1)
 	{
-		execute(cmd, arguments, data, buff);
+		fun(cmd, arguments, data, buff);
 		return;
 	}
 
@@ -42,7 +42,7 @@ void check_dif(char **arguments, functi_comm_global *data, char *buff)
 	data->value_path = which(cmd, data);
 	if (data->value_path != NULL)
 	{
-		execute(data->value_path, arguments, data, buff);
+		fun(data->value_path, arguments, data, buff);
 		free_memory_p((void *) data->value_path);
 		return;
 	}
