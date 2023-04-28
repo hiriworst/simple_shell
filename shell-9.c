@@ -11,29 +11,29 @@ char **linetoken(char *ptr_path_location, char **place_var)
 {
 	int result = 0;
 	char *path_dir;
-	char **val_buf_variable = _calloc(sizeof(char *), 64);
+	char **var_tkn = _calloc(sizeof(char *), 64);
 
 	path_dir =	strtok(ptr_path_location, " \n\t\r\a");
 
 	while (path_dir != NULL)
 	{
-		val_buf_variable[result] = path_dir;
+		var_tkn[result] = path_dir;
 		result++;
 		path_dir = strtok(NULL, " \n\t\r\a");
 	}
-	if (val_buf_variable[0] == NULL)
+	if (var_tkn[0] == NULL)
 	{
-		val_buf_variable[result] = "\n";
+		var_tkn[result] = "\n";
 	}
 
-	if ((_strcmp(val_buf_variable[0], "exit") == 0) && val_buf_variable[1] == NULL)
+	if ((_strcmp(var_tkn[0], "exit") == 0) && var_tkn[1] == NULL)
 	{
 		free(ptr_path_location);
-		free(val_buf_variable);
+		free(var_tkn);
 		exit(0);
 	}
-	if ((_strcmp(val_buf_variable[0], "place_var") == 0) && val_buf_variable[1] == NULL)
+	if ((_strcmp(var_tkn[0], "place_var") == 0) && var_tkn[1] == NULL)
 		find_env(place_var);
 
-	return (val_buf_variable);
+	return (var_tkn);
 }
