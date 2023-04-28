@@ -1,25 +1,23 @@
 #include "main.h"
 /**
- * _strcmp - function that will compare 2 strings
- * @s1: count s1
- * @s2: count for s2
- * Return: returns the diference between s1 and s2
+ * _strcmp - comp two strings one and two both in the func
+ * @string_length_one: string-lenth
+ * @string_lenth_two: second arg
+ * Return: both strings
  */
-int _strcmp(char *s1, char *s2)
+int _strcmp(char *string_length_one, char *string_lenth_two)
 {
-	int x;
-	int y = 0;
-	int rest;
+	int loop_through;
+	int other_loop_through = 0;
+	int outcome;
 
-	for (x = 0; s1[x] != '\0'; x++, y++)
+	for (loop_through = 0; string_length_one[loop_through] != '\0'; loop_through++, other_loop_through++)
 	{
-		rest = s1[x] - s2[y];
+		outcome = string_length_one[loop_through] - string_lenth_two[other_loop_through];
 
-			if (rest != 0)
-			{
+			if (outcome != 0)
 				break;
-			}
 	}
-	return (rest);
+	return (outcome);
 
 }
