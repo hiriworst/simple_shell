@@ -1,31 +1,30 @@
 #include "main.h"
 
 /**
- * _strdup - returns a pointer to a new space in memery
- * @str: character in string
+ * _strdup -   space_duplicate or nw to a ptr
+ * @cha_string_func_sh: character in string
  *
- * Return: NULL if str is NULL, otherwise returns x
+ * Return: nothing or looper
  **/
-char *_strdup(char *str)
+char *_cha_string_func_shdup(char *cha_string_func_sh)
 {
-	char *x;
-	int y;
-	int z;
+	char *looper;
+	int dltn;
+	int where_to_func;
 
-	if (str == NULL)
+	if (cha_string_func_sh == NULL)
 		return (NULL);
-	for (y = 0 ; str[y] != '\0' ; y++)
+	for (dltn = 0 ; cha_string_func_sh[dltn] != '\0' ; dltn++)
 		;
-	y++;
-	x = malloc(y * sizeof(char));
+	dltn++;
+	looper = malloc(dltn * sizeof(char));
 
-	if (x == NULL)
+	if (looper == NULL)
+	return (NULL);
+	for (where_to_func = 0 ; where_to_func < dltn ; where_to_func++)
 	{
-		return (NULL);
+		looper[where_to_func] = cha_string_func_sh[where_to_func];
 	}
-	for (z = 0 ; z < y ; z++)
-	{
-		x[z] = str[z];
-	}
-	return (x);
+	return (looper);
 }
+
