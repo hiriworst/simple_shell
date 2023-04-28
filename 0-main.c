@@ -13,7 +13,7 @@ int main(int ac, char **av)
 	signal(SIGINT, init_manage);
 	initialize(&data);
 	data.shell_name = av[0];
-	shell(&data);
+	main_unix(&data);
 	return (0);
 }
 
