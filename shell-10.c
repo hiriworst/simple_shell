@@ -1,46 +1,46 @@
 #include "main.h"
 
 /**
- * main - Executes commands
- * @ac: Argument counts
- * @av: Arguments in an array
- * @environ: Array of pointers of the variable environment
+ * main - main fuction give output
+ * @argc: first argument
+ * @argv: second argument
+ * @environ: arrs
  *
- * Return: Always 0
+ * Return: 0
  **/
-int main(int ac, char *av[], char **environ)
+int main(int argc, char *argv[], char **environ)
 {
 
-	char *bf = NULL;
-	char **bftoken, **pat;
+	char *data_fork = NULL;
+	char **elem_data, **pat;
 	ssize_t characters;
 	size_t bfsize = 0;
-	int goesin = 0;
-	(void)ac;
-	(void)av;
+	int input_func = 0;
+	(void)argc;
+	(void)argv;
 
 	while (1)
 	{
 
 		if (isatty(STDIN_FILENO))
 			write(STDIN_FILENO, "$ ", 2);
-		characters = getline(&bf, &bfsize, stdin);
+		characters = getline(&data_fork, &bfsize, stdin);
 		if (characters == EOF)
 		{
-			free(bf);
+			free(data_fork);
 			exit(0); }
 
-		if (*bf != '\n')
+		if (*data_fork != '\n')
 		{
-			bftoken = linetoken(bf, environ);
-			if ((_strcmp(bftoken[0], "\n") != 0) && (_strcmp(bftoken[0], "env") != 0))
+			elem_data = linetoken(data_fork, environ);
+			if ((_strcmp(elem_data[0], "\n") != 0) && (_strcmp(elem_data[0], "env") != 0))
 			{
 				pat = findpath(environ);
-				goesin = _stat(bftoken, pat);
-				exefork(bftoken, goesin, environ); }
+				input_func = _stat(elem_data, pat);
+				exefork(elem_data, input_func, environ); }
 			else
 			{
-				free(bftoken);
+				free(elem_data);
 			}
 		}
 	}
