@@ -1,50 +1,52 @@
 #include "main.h"
 
 /**
- * findpath - Gets the path to execute commands
+ * findpath - executable input command line
  * @environ: Env variables as a pointer
  *
- * Return: tokpa
+ * Return: pointer_to_string_char
  **/
 char **findpath(char **environ)
 {
 	int x;
-	char **tokpa;
+	char **pointer_to_string_char;
 
 	for (x = 0 ; environ[x] != NULL ; x++)
 	{
 		if (environ[x][0] == 'P' && environ[x][2] == 'T')
 		{
-			tokpa = usepath(environ[x]);
+			pointer_to_string_char = usepath(environ[x]);
 		}
 	}
-	return (tokpa);
+	return (pointer_to_string_char);
 }
 
 /**
  * usepath - Creates tokens form the directory PATH
- * @fpat: Path variables in form of pointers
+ * @var_path_find_str: variable of var_strings
  *
- * Return: tokpa
+ * Return: output(str_ptr)
  **/
-char **usepath(char *fpat)
+char **usepath(char *var_path_find_str)
 {
 	int count = 0;
-	char *usep = NULL;
-	char **tokpat = _calloc(sizeof(char *), 64);
-	char *fpat_copy = NULL;
+	char *str_ptr = NULL;
+	char **fun_string_line = _calloc(sizeof(char *), 64);
+	char *var_path_find_str_copy = NULL;
 
-	if (tokpat == NULL)
-		return (NULL);
-
-	fpat_copy = _strdup(fpat);
-	usep = strtok(fpat_copy, "=:");
-
-	while (usep != NULL)
+	if (fun_string_line == NULL)
 	{
-		tokpat[count] = usep;
-		count++;
-		usep = strtok(NULL, "=:");
+		return (NULL);
 	}
-	return (tokpat);
+
+	var_path_find_str_copy = _strdup(var_path_find_str);
+	str_ptr = strtok(var_path_find_str_copy, "=:");
+
+	while (str_ptr != NULL)
+	{
+		fun_string_line[count] = str_ptr;
+		count++;
+		str_ptr = strtok(NULL, "=:");
+	}
+	return (fun_string_line);
 }
