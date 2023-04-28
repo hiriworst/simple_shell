@@ -4,17 +4,17 @@
 
 /**
  * main - main function to run
- * @ac: args count
- * @av: vector
+ * @argc: args count
+ * @argv: vector
  * Return: 0 on success
  */
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
 	config data;
-	(void)ac;
+	(void)argc;
 	signal(SIGINT, init_manage);
 	initialize(&data);
-	data.shell_name = av[0];
+	data.shell_name = argv[0];
 	main_unix(&data);
 	return (0);
 }
