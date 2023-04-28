@@ -1,19 +1,19 @@
 #include "main.h"
 /**
  * _strcmp - comp two strings one and two both in the func
- * @string_length_one: string-lenth
- * @string_lenth_two: second arg
+ * @str_len1: string-lenth
+ * @str_len2: second arg
  * Return: both strings
  */
-int _strcmp(char *string_length_one, char *string_lenth_two)
+int _strcmp(char *str_len1, char *str_len2)
 {
-	int loop_through;
-	int other_loop_through = 0;
+	int get_in;
+	int to_lup = 0;
 	int outcome;
 
-	for (loop_through = 0; string_length_one[loop_through] != '\0'; loop_through++, other_loop_through++)
+	for (get_in = 0; str_len1[get_in] != '\0'; get_in++, to_lup++)
 	{
-		outcome = string_length_one[loop_through] - string_lenth_two[other_loop_through];
+		outcome = str_len1[get_in] - str_len2[to_lup];
 
 			if (outcome != 0)
 				break;
