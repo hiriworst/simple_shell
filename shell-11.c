@@ -1,33 +1,33 @@
 #include "main.h"
 
 /**
- * _stat - function that shows sistem files
- * @bftoken: buffer pointer with commands
- * @pat: pointer with the location of each directory
- * Return: 1 on success
+ * _stat - function for files and sys cnge
+ * @data_tkn: argments
+ * @pat: locate_point
+ * Return: zero or one
  **/
-int _stat(char **bftoken, char **pat)
+int _stat(char **data_tkn, char **pat)
 {
-	char *newval = NULL, *newval2 = NULL;
+	char *var_digit = NULL, *more_var_numb = NULL;
 	int x;
 
 	struct stat sb;
 
 	for (x = 1 ; pat[x] != NULL ; x++)
 	{
-		newval = str_concat(pat[x], "/");
-		newval2 = str_concat(newval, bftoken[0]);
+		var_digit = str_concat(pat[x], "/");
+		more_var_numb = str_concat(var_digit, data_tkn[0]);
 
-		if (stat(newval2, &sb) == 0)
+		if (stat(more_var_numb, &sb) == 0)
 		{
-			bftoken[0] = newval2;
-			free(newval);
+			data_tkn[0] = more_var_numb;
+			free(var_digit);
 			free(pat[0]);
 			free(pat);
 			return (1);
 		}
-		free(newval);
-		free(newval2);
+		free(var_digit);
+		free(more_var_numb);
 	}
 	free(pat[0]);
 	free(pat);
