@@ -2,18 +2,18 @@
 
 /**
  * exefork - execute another function after child system process
- * @function_modified_token: Process to execute via pointers
- * @inputed_digit_or_string: If process does happen then execute
+ * @token_mdf: Process to execute via pointers
+ * @input_num: If process does happen then execute
  * @environ: Environment variables
  *
  * Return: 1
  **/
-int exefork(char **function_modified_token, int inputed_digit_or_string, char **environ)
+int exefork(char **token_mdf, int input_num, char **environ)
 {
 	pid_t child_pid;
 	int result;
 
-	if (function_modified_token == NULL)
+	if (token_mdf == NULL)
 	{
 	return (-1);
 	}
@@ -26,20 +26,20 @@ int exefork(char **function_modified_token, int inputed_digit_or_string, char **
 	}
 	else if (child_pid == 0)
 	{
-		if (execve(function_modified_token[0], function_modified_token, environ) == -1)
+		if (execve(token_mdf[0], token_mdf, environ) == -1)
 		{
 			perror("./hsh: ");
-			free(function_modified_token);
+			free(token_mdf);
 			exit(1);
 		}
 		exit(0);
 	}
 	else
 	{
-		if (inputed_digit_or_string == 1)
-			free(function_modified_token[0]);
+		if (input_num == 1)
+			free(token_mdf[0]);
 
-		free(function_modified_token);
+		free(token_mdf);
 		wait(&result);
 	}
 	return (1);
