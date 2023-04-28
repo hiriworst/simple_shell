@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- *_puts - Prints a string
- *@str:  String to be printed
+ *_puts - string_echos the output from the func
+ *@out_put_line_string: ing to be printed
  *
  **/
-void _puts(char *str)
+void _puts(char *out_put_line_string)
 
 {
-	int n;
+	int digit_num;
 
-	for (n = 0 ; str[n] != '\0' ; n++)
+	for (digit_num = 0 ; out_put_line_string[digit_num] != '\0' ; digit_num++)
 	{
-		_putchar(str[n]);
+		_putchar(out_put_line_string[digit_num]);
 	}
 	_putchar('\n');
 }
