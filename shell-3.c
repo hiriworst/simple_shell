@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * str_concat - Concatenates 2 strings
- * @s1: string 1
- * @s2: string 2
+ * str_concat - put two strings together
+ * @string_one:  one line of string
+ * @string_two: other line of str
  *
- * Return: NULL on error
+ * Return: zero or null
  **/
-char *str_concat(char *s1, char *s2)
+char *str_concat(char *string_one, char *string_two)
 {
 	char *S;
 	int x = 0;
@@ -15,31 +15,29 @@ char *str_concat(char *s1, char *s2)
 	int z = 0;
 	int w = 0;
 
-	if (s1 != NULL)
+	if (string_one != NULL)
 	{
-		for (x = 0 ; s1[x] != '\0' ; x++)
+		for (x = 0 ; string_one[x] != '\0' ; x++)
 			;
 	}
-	if (s2 != NULL)
+	if (string_two != NULL)
 	{
-		for (y = 0 ; s2[y] != '\0' ; y++)
+		for (y = 0 ; string_two[y] != '\0' ; y++)
 			;
 	}
 		S = malloc(x + y + 1);
 
 		if (S == NULL)
-		{
 			return (NULL);
-		}
 		for (z = 0 ; z < x + y ; z++)
 		{
 			if (z < x)
 			{
-				S[z] = s1[z];
+				S[z] = string_one[z];
 			}
 			else
 			{
-				S[z] = s2[w];
+				S[z] = string_two[w];
 				w++;
 			}
 		}
