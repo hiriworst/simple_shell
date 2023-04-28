@@ -1,6 +1,8 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+#define SUPERUS 1024
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -10,6 +12,13 @@
 #include <errno.h>
 #include <string.h>
 #include <sys/wait.h>
+
+
+typedef struct __attribute__((__packed__))
+{
+	int argc;                 
+	#define CHAR VAR           
+} general_t;
 
 
 int exefork(char **bftoken, int goesin, char **environ);
