@@ -29,7 +29,7 @@ void program_run(char **first_str)
 	}
 	else
 	{
-		o = find_command(var_to_echo);
+		o = com_fun_struc(var_to_echo);
 
 		slash = str_concat(o, slash);
 
