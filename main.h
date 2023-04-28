@@ -1,6 +1,8 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
+#define SUPER_USER 2080
 
+#define Space_locate 1024
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -17,6 +19,11 @@ void find_env(char **environ);
 void _puts(char *str);
 int _strcmp(char *s1, char *s2);
 void *_calloc(unsigned int nmemb, unsigned int size);
+
+void *_my_func_works(unsigned int new_num, unsigned int what_to_ptr);
+
+void *_number_func(unsigned int token, unsigned int lenth_of_token);
+
 
 int exefork(char **bftoken, int goesin, char **environ);
 int _putchar(char c);
