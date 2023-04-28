@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * find_env - Get environment variables
+ * find_env - func to get env varialbe
  * @environ: Environment variables
  **/
 void find_env(char **environ)
 {
-	int x;
+	int digit_elem;
 
-	for (x = 0 ; environ[x] ; x++)
+	for (digit_elem = 0 ; environ[digit_elem] ; digit_elem++)
 	{
-		_puts(environ[x]);
+		_puts(environ[digit_elem]);
 	}
 }
+
