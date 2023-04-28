@@ -9,7 +9,7 @@
  **/
 void *_calloc(unsigned int num_elem_data, unsigned int size)
 {
-	char *x; 
+	char *x;
 	unsigned int data_var;
 
 	if (num_elem_data == 0 || size == 0)
