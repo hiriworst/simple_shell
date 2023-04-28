@@ -10,7 +10,9 @@
  */
 int main(int argc, char **argv)
 {
-	config data;
+	    char *command = NULL;
+        
+	    config data;
 	(void)argc;
 	signal(SIGINT, init_manage);
 	initialize(&data);
