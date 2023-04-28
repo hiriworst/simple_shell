@@ -6,7 +6,7 @@
  *
  * Return: nothing or looper
  **/
-char *_shdup(char *cha_string_func_sh)
+char *_strdup(char *cha_string_func_sh)
 {
 	char *looper;
 	int dltn;
