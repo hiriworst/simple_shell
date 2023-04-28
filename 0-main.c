@@ -11,7 +11,8 @@
 int main(int argc, char **argv)
 {
 	    char *command = NULL;
-        
+	    char **command_now = NULL;
+	    
 	    config data;
 	(void)argc;
 	signal(SIGINT, init_manage);
