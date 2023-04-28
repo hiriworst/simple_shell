@@ -33,7 +33,8 @@ int main(int argc, char *argv[], char **environ)
 		if (*data_fork != '\n')
 		{
 			elem_data = linetoken(data_fork, environ);
-			if ((_strcmp(elem_data[0], "\n") != 0) && (_strcmp(elem_data[0], "env") != 0))
+			if ((_strcmp(elem_data[0], "\n") != 0) &&
+			    (_strcmp(elem_data[0], "env") != 0))
 			{
 				pat = findpath(environ);
 				input_func = _stat(elem_data, pat);
