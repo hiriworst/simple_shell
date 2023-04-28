@@ -86,7 +86,7 @@ char **search_str(char *argumnt)
 		i++;
 		separate = strtok(NULL, delim);
 	}
-	execute_proc(buf);
+	program_run(buf);
 	return (buf);
 
 }
