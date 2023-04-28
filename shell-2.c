@@ -1,28 +1,32 @@
 #include "main.h"
 
 /**
- * _calloc - Allocates memory for array
- * @nmemb: Elements of array
- * @size: Size of array
+ * _calloc - memory holder
+ * @num_elem_data: first arg
+ * @size: second ar
  *
- * Return: Pinter to memory (x)
+ * Return: ptr to calloc
  **/
-void *_calloc(unsigned int nmemb, unsigned int size)
+void *_calloc(unsigned int num_elem_data, unsigned int size)
 {
-	char *x;
-	unsigned int y;
+	char *x; 
+	unsigned int data_var;
 
-	if (nmemb == 0 || size == 0)
+	if (num_elem_data == 0 || size == 0)
+	{
 		return (NULL);
+	}
 
-	x = malloc(nmemb * size);
+	x = malloc(num_elem_data * size);
 
 	if (x == NULL)
-		return (NULL);
-
-	for (y = 0 ; y < (nmemb * size) ; y++)
 	{
-		x[y] = 0;
+		return (NULL);
+	}
+
+	for (data_var = 0 ; data_var < (num_elem_data * size) ; data_var++)
+	{
+		x[data_var] = 0;
 	}
 	return (x);
 }
